@@ -13,5 +13,5 @@ nvim -c 'LspInstall pyright' -c 'qall'
 nvim -c 'TSInstall python' -c 'qall'
 
 :: next command uses this repo as customization of AstroNvim
-git clone https://github.com/dlordi/astronvim-custom-config "%LOCALAPPDATA%\nvim\lua\user"
+git clone https://github.com/dlordi/astronvim-user-config "%LOCALAPPDATA%\nvim\lua\user"
 ```
