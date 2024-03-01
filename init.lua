@@ -1,4 +1,5 @@
 vim.cmd("lan en_US.UTF-8") -- no translation, always use english
+vim.opt.whichwrap = "b,s,<,>,[,]" -- wraps left/right moves to previous/next row
 
 if vim.g.neovide then
   -- local font_name = "SauceCodePro Nerd Font" -- tested both on Windows and MacOS
