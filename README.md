@@ -11,6 +11,10 @@ nvim --headless -c 'qall'
 :: next commands runs nvim with no UI to install python utilities
 nvim -c 'LspInstall pyright' -c 'qall'
 nvim -c 'TSInstall python' -c 'qall'
+:: TODO: install ruff (formatter for python)
+nvim -c 'LspInstall lua_ls' -c 'qall'
+nvim -c 'TSInstall lua' -c 'qall'
+:: TODO: install stylua (formatter for lua)
 
 :: next command uses this repo as customization of AstroNvim
 git clone https://github.com/dlordi/astronvim-user-config "%LOCALAPPDATA%\nvim\lua\user"
