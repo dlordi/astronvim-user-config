@@ -28,10 +28,10 @@ return {
     i = {
       ["<C-s>"] = { "<cmd>:w<cr>", desc = "Save current file (Force Write)" }, 
     },
-    -- v = {
-    --   K = { ":m '>+1<cr>gv", desc = "Move selection one row up in visual mode" },
-    --   I = { ":m '<-2<cr>gv", desc = "Move selection one row down in visual mode" },
-    -- },
+    v = {
+      K = { ":m '>+1<cr>gv=gv", desc = "Move selection one row up in visual mode" },
+      I = { ":m '<-2<cr>gv=gv", desc = "Move selection one row down in visual mode" },
+    },
   },
   options = {
     opt = {
