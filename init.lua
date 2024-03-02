@@ -36,7 +36,7 @@ return {
   options = {
     opt = {
       colorcolumn = "120", -- show columns margins
-      listchars = { space = "·", tab = "⎯⎯" }, -- show blanks
+      listchars = { space = "·", tab = "⎯⎯" }, -- set symbols for blanks
       list = true, -- show blanks
     },
   },
