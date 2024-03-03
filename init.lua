@@ -1,4 +1,4 @@
-vim.cmd("lan en_US.UTF-8") -- no translation, always use english
+vim.cmd("lan en_US.UTF-8") -- no translation, always use english messages
 vim.opt.whichwrap = "b,s,<,>,[,]" -- wraps left/right moves to previous/next row
 
 if vim.g.neovide then
@@ -11,7 +11,7 @@ if vim.g.neovide then
   vim.g.neovide_input_use_logo = 1
 
   local opts = { noremap = true, silent = true }
- 
+
   -- enable MacOS system clipboard
   vim.api.nvim_set_keymap("", "<D-v>", "+p<CR>", opts)
   vim.api.nvim_set_keymap("!", "<D-v>", "<C-R>+", opts)
@@ -26,7 +26,7 @@ end
 return {
   mappings = {
     i = {
-      ["<C-s>"] = { "<cmd>:w<cr>", desc = "Save current file (Force Write)" }, 
+      ["<C-s>"] = { "<cmd>:w<cr>", desc = "Save current file (Force Write)" },
     },
     v = {
       K = { ":m '>+1<cr>gv=gv", desc = "Move selection one row up in visual mode" },
