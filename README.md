@@ -1,4 +1,3 @@
-
 ```bat
 :: backup previous configuration and install AstroNvim
 if exist "%LOCALAPPDATA%\nvim.bak" ren "%LOCALAPPDATA%\nvim" "%LOCALAPPDATA%\nvim.bak"
@@ -19,4 +18,5 @@ nvim --headless -c 'TSInstall lua' -c 'qall'
 
 :: next command uses this repo as customization of AstroNvim
 git clone https://github.com/dlordi/astronvim-user-config "%LOCALAPPDATA%\nvim\lua\user"
+
 ```
