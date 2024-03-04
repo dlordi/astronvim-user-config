@@ -8,7 +8,7 @@ git clone --depth 1 https://github.com/AstroNvim/AstroNvim "%LOCALAPPDATA%\nvim"
 :: next command runs nvim with no UI to complete AstroNvim setup
 nvim --headless -c 'qall'
 
-:: next commands runs nvim with no UI to install python utilities
+:: next commands run nvim with no UI to install programmin languages utils
 nvim --headless -c 'LspInstall pyright' -c 'qall'
 nvim --headless -c 'TSInstall python' -c 'qall'
 :: TODO: install ruff (formatter for python)
