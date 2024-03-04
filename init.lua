@@ -5,7 +5,7 @@ if vim.g.neovide then
   -- local font_name = "SauceCodePro Nerd Font" -- tested both on Windows and MacOS
   local font_name = "JetBrainsMono Nerd Font"
   local font_size = vim.loop.os_uname().sysname == "Windows_NT" and "11" or "14"
-  vim.o.guifont = font_name.. ":h" .. font_size
+  vim.o.guifont = font_name .. ":h" .. font_size
 
   -- enable MacOS "Command" key
   vim.g.neovide_input_use_logo = 1
