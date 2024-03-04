@@ -42,7 +42,7 @@ return {
   },
   plugins = {
     -- disable unused plugins
-    { "goolord/alpha-nvim", enabled = false },
-    { "lukas-reineke/indent-blankline.nvim", enabled = false },
+    { "goolord/alpha-nvim", enabled = false }, -- shows welcome screen on start-up
+    { "lukas-reineke/indent-blankline.nvim", enabled = false }, -- shows vertical indentation lines
   },
 }
