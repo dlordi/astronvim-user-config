@@ -1,48 +1,85 @@
-vim.cmd("lan en_US.UTF-8") -- no translation, always use english messages
-vim.opt.whichwrap = "b,s,<,>,[,]" -- wraps left/right moves to previous/next row
-
-if vim.g.neovide then
-  -- local font_name = "SauceCodePro Nerd Font" -- tested both on Windows and MacOS
-  local font_name = "JetBrainsMono Nerd Font"
-  local font_size = vim.loop.os_uname().sysname == "Windows_NT" and "11" or "14"
-  vim.o.guifont = font_name .. ":h" .. font_size
-
-  -- enable MacOS "Command" key
-  vim.g.neovide_input_use_logo = 1
-
-  local opts = { noremap = true, silent = true }
-
-  -- enable MacOS system clipboard
-  vim.api.nvim_set_keymap("", "<D-v>", "+p<CR>", opts)
-  vim.api.nvim_set_keymap("!", "<D-v>", "<C-R>+", opts)
-  vim.api.nvim_set_keymap("t", "<D-v>", "<C-R>+", opts)
-  vim.api.nvim_set_keymap("v", "<D-v>", "<C-R>+", opts)
-
-  -- enable Windows system clipboard
-  vim.api.nvim_set_keymap("i", "<C-v>", "<C-R>+", opts)
-  vim.api.nvim_set_keymap("!", "<S-Insert>", "<C-R>+", opts)
-end
-
 return {
-  mappings = {
-    i = {
-      ["<C-s>"] = { "<cmd>:w<cr>", desc = "Save current file (Force Write)" },
+  -- Configure AstroNvim updates
+  -- updater = {
+  --   remote = "origin", -- remote to use
+  --   channel = "stable", -- "stable" or "nightly"
+  --   version = "latest", -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
+  --   branch = "nightly", -- branch name (NIGHTLY ONLY)
+  --   commit = nil, -- commit hash (NIGHTLY ONLY)
+  --   pin_plugins = nil, -- nil, true, false (nil will pin plugins on stable only)
+  --   skip_prompts = false, -- skip prompts about breaking changes
+  --   show_changelog = true, -- show the changelog after performing an update
+  --   auto_quit = false, -- automatically quit the current session after a successful update
+  --   remotes = { -- easily add new remotes to track
+  --     --   ["remote_name"] = "https://remote_url.come/repo.git", -- full remote url
+  --     --   ["remote2"] = "github_user/repo", -- GitHub user/repo shortcut,
+  --     --   ["remote3"] = "github_user", -- GitHub user assume AstroNvim fork
+  --   },
+  -- },
+
+  -- Set colorscheme to use
+  colorscheme = "vscode",
+
+  -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
+  -- diagnostics = {
+  --   virtual_text = true,
+  --   underline = true,
+  -- },
+
+  lsp = {
+    -- customize lsp formatting options
+    formatting = {
+      -- control auto formatting on save
+      format_on_save = {
+        enabled = true, -- enable or disable format on save globally
+        allow_filetypes = { -- enable format on save for specified filetypes only
+          "lua",
+        },
+        ignore_filetypes = { -- disable format on save for specified filetypes
+          -- "python",
+        },
+      },
+      disabled = { -- disable formatting capabilities for the listed language servers
+        -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
+        "lua_ls",
+      },
+      -- timeout_ms = 1000, -- default format timeout
+      -- filter = function(client) -- fully override the default formatting function
+      --   return true
+      -- end
     },
-    v = {
-      K = { ":m '>+1<cr>gv=gv", desc = "Move selection one row up in visual mode" },
-      I = { ":m '<-2<cr>gv=gv", desc = "Move selection one row down in visual mode" },
+    -- enable servers that you already have installed without mason
+    servers = {
+      -- "pyright"
     },
   },
-  options = {
-    opt = {
-      colorcolumn = "120", -- show columns margins
-      listchars = { space = "·", tab = "⎯⎯" }, -- set symbols for blanks
-      list = true, -- show blanks
-    },
-  },
-  plugins = {
-    -- disable unused plugins
-    { "goolord/alpha-nvim", enabled = false }, -- shows welcome screen on start-up
-    { "lukas-reineke/indent-blankline.nvim", enabled = false }, -- shows vertical indentation lines
-  },
+
+  -- Configure require("lazy").setup() options
+  -- lazy = {
+  --   defaults = { lazy = true },
+  --   performance = {
+  --     rtp = {
+  --       -- customize default disabled vim plugins
+  --       disabled_plugins = { "tohtml", "gzip", "matchit", "zipPlugin", "netrwPlugin", "tarPlugin" },
+  --     },
+  --   },
+  -- },
+
+  -- This function is run last and is a good place to configuring
+  -- augroups/autocommands and custom filetypes also this just pure lua so
+  -- anything that doesn't fit in the normal config locations above can go here
+  polish = function()
+    -- Set up custom filetypes
+    -- vim.filetype.add {
+    --   extension = {
+    --     foo = "fooscript",
+    --   },
+    --   filename = {
+    --     ["Foofile"] = "fooscript",
+    --   },
+    --   pattern = {
+    --     ["~/%.config/foo/.*"] = "fooscript",
+    --   },
+    -- }
+  end,
 }
