@@ -29,4 +29,5 @@ nvim --headless -c 'Mason' -c 'qall'
 
 - fix python debugger setup (it cannot find python3)
 - replace `null_ls` with `none_ls`
+- show line ending format in status bar
 - format on save markdown files
