@@ -6,13 +6,13 @@ if exist "%LOCALAPPDATA%\nvim-data.bak" ren "%LOCALAPPDATA%\nvim-data" "%LOCALAP
 :: ... OR, just wipe it out previous configuration (useful for AstroNvim updates!)
 :: rd /S /Q "%LOCALAPPDATA%\nvim" "%LOCALAPPDATA%\nvim-data"
 
-:: now, you can install AstroNvim (clone the repo and run nvim with no UI to download packages)!
+:: now, you can install AstroNvim (and run nvim for the first time to donwload required packages!)
 git clone --depth 1 https://github.com/AstroNvim/AstroNvim "%LOCALAPPDATA%\nvim"
-nvim --headless -c 'qall'
+cd "%LOCALAPPDATA%\nvim" && nvim
 
-:: next, clone this repo to customize AstroNvim setup (and run again nvim with no UI!)
+:: next, clone this repo to customize AstroNvim setup (and run again nvim to complete customization!)
 git clone https://github.com/dlordi/astronvim-user-config "%LOCALAPPDATA%\nvim\lua\user"
-nvim --headless -c 'Mason' -c 'qall'
+cd "%LOCALAPPDATA%\nvim" && nvim
 ```
 
 - [list of community packages](https://github.com/AstroNvim/astrocommunity/tree/main)
