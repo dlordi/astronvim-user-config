@@ -19,8 +19,8 @@ cd "%LOCALAPPDATA%\nvim" && nvim
 
 # TODOs
 
-- fix python debugger setup (it cannot find python3)
-- replace `null_ls` with `none_ls`
-- customize status bar
+- fix python debugger (`debugpy`) setup: it cannot find `python3`
+- replace deprecated `null_ls` with `none_ls`
+- customize statusline
     - show line ending format in status bar
-- enable format on save for markdown files
+- enable format on save for markdown (`.md`) files
