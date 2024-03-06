@@ -4,8 +4,7 @@ if exist "%LOCALAPPDATA%\nvim.bak" ren "%LOCALAPPDATA%\nvim" "%LOCALAPPDATA%\nvi
 if exist "%LOCALAPPDATA%\nvim-data.bak" ren "%LOCALAPPDATA%\nvim-data" "%LOCALAPPDATA%\nvim-data.bak"
 
 :: ... OR, just wipe it out previous configuration (useful for AstroNvim updates!)
-:: rd /S /Q "%LOCALAPPDATA%\nvim"
-:: rd /S /Q "%LOCALAPPDATA%\nvim-data"
+:: rd /S /Q "%LOCALAPPDATA%\nvim" "%LOCALAPPDATA%\nvim-data"
 
 :: now, you can install AstroNvim (clone the repo and run nvim with no UI to download packages)!
 git clone --depth 1 https://github.com/AstroNvim/AstroNvim "%LOCALAPPDATA%\nvim"
